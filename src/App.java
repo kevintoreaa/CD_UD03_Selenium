@@ -1,8 +1,12 @@
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class App{
+import net.bytebuddy.asm.Advice.Enter;
+
+public class App {
     public static void main(String[] args) {
 
         System.setProperty("webdriver.chrome.driver", "driver/chromedriver");
@@ -10,9 +14,11 @@ public class App{
  
         try {
             driver.get("https://es.wikipedia.org");
-            Thread.sleep(3000);
+           WebElement cajaBusqueda = driver.findElement(By.id("searchInput"));
+            cajaBusqueda.sendKeys("Selenium");
 
            System.out.println(driver.getTitle());
+           Thread.sleep(3000);
 
         } catch (InterruptedException e) {
             //TODO
