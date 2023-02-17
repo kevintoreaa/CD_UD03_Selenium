@@ -1,3 +1,6 @@
+import java.beans.Transient;
+
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,19 +15,9 @@ public class App {
         System.setProperty("webdriver.chrome.driver", "driver/chromedriver");
         WebDriver driver = new ChromeDriver();
  
-        try {
-            driver.get("https://es.wikipedia.org");
-           WebElement cajaBusqueda = driver.findElement(By.id("searchInput"));
-            cajaBusqueda.sendKeys("Selenium");
+       @Test
+       public void testCombo
 
-           System.out.println(driver.getTitle());
-           Thread.sleep(3000);
-
-        } catch (InterruptedException e) {
-            //TODO
-            e.printStackTrace();
-        }
-        
-        driver.quit();
+            driver.get(file://home/sanclemente.local/a20kevinpc/)
     }
 }
